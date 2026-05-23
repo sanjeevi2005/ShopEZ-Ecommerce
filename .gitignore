@@ -1,0 +1,21 @@
+# 📦 Dependencies (Client & Server)
+node_modules/
+
+# 🔐 Environment Variables (Passwords & API Keys)
+.env
+.env.local
+.env.development
+.env.production
+
+# 🏗️ Production Build Files (Vite / React)
+dist/
+build/
+
+# 📝 Log Files (Errors)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 💻 OS Generated Files (Mac / Windows)
+.DS_Store
+Thumbs.db
