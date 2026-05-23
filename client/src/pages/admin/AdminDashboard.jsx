@@ -16,7 +16,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        // Backend API-ah call panrom
+        // Backend API
         const response = await fetch('http://localhost:8000/api/admin/stats');
         const data = await response.json();
         setStats(data);

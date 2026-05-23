@@ -13,7 +13,7 @@ const Navbar = () => {
   // Search state
   const [searchTerm, setSearchTerm] = useState("");
 
-  // URL-la search query irundha athai input-la set panna
+  
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const searchParam = params.get("search");

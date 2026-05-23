@@ -23,17 +23,17 @@ const AddProduct = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Image file select pannumbothu handle panna
+  // Image file select handle 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       setFormData({ ...formData, image: file });
-      // Image preview generate panrom
+      // Image preview generate 
       setImagePreview(URL.createObjectURL(file)); 
     }
   };
 
-  // Form Submit panna
+  // Form Submit 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -42,8 +42,6 @@ const AddProduct = () => {
     }
 
     setLoading(true);
-
-    // Image file anuppa 'FormData' use pannanum (Normal JSON work aagathu)
     const data = new FormData();
     data.append('title', formData.title);
     data.append('description', formData.description);
@@ -51,19 +49,18 @@ const AddProduct = () => {
     data.append('category', formData.category);
     data.append('sizes', formData.sizes);
     data.append('gender', formData.gender);
-    data.append('image', formData.image); // Ithu backend-la upload.single('image') nu edukkum
-
+    data.append('image', formData.image);
     try {
       const response = await fetch('http://localhost:8000/api/products/add', {
         method: 'POST',
-        body: data, // JSON stringify panna koodathu
+        body: data, 
       });
 
       const result = await response.json();
 
       if (response.ok) {
         toast.success(result.message);
-        navigate('/admin/dashboard'); // Success aana dashboard-ku poyidum
+        navigate('/admin/dashboard'); 
       } else {
         toast.error(result.message || "Failed to add product");
       }
